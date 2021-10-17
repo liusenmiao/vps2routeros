@@ -20,13 +20,14 @@ MAIN_INTERFACE=$(ip route list | grep default | cut -d' ' -f 5)
 # you can use `lsblk` to find out this
 # default: the disk with a partition mounted to `/`
 DISK=/dev/vda
-echo "n
-p
+echo "g
+n
 1
 
 
 w
-" | fdisk /dev/vda && mkfs.ext4 /dev/vda1
+" | fdisk /dev/vda
+mkfs -t ext4 /dev/vda1
 mkdir /mnt/temp
 mount -t ext4 /dev/vda1 /mnt/temp
 
