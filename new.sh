@@ -118,5 +118,5 @@ echo s > /proc/sysrq-trigger
 echo "wait a while"
 sleep 5 || echo "please wait 5 seconds and execute\n\techo b > /proc/sysrq-trigger\nmanually, or hard reset device"
 
-echo "rebooting"
+read -p "Please Remove ISO"
 echo b > /proc/sysrq-trigger
