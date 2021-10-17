@@ -30,6 +30,7 @@ w
 mkfs -t ext4 /dev/vda1
 mkdir /mnt/temp
 mount -t ext4 /dev/vda1 /mnt/temp
+cd /mnt/temp
 
 # get IPv4 address in IP-CIDR format
 # do not modify unless you know what you are doing
