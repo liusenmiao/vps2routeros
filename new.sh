@@ -82,7 +82,7 @@ echo -e "\nIf you continue, your disk will be formatted and no data will be pres
 confirm || exit -1
 
 echo "installing packages"
-pacman -Sy --noconfirm qemu-headless pv psmisc parted glibc
+pacman -Sy --noconfirm qemu-headless pv psmisc parted glibc || true
 
 echo "download image"
 wget ${ROUTEROS_URL} -O chr.img.zip
