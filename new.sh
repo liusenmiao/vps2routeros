@@ -19,7 +19,10 @@ MAIN_INTERFACE=$(ip route list | grep default | cut -d' ' -f 5)
 # May not be compatible with SCSI drives; see official document of RouterOS CHR
 # you can use `lsblk` to find out this
 # default: the disk with a partition mounted to `/`
-DISK=$(mount | grep ' / ' | cut -d' ' -f1 | sed 's/[0-9]*$//g')
+DISK=/dev/vda
+fdisk /dev/vda && mkfs -t ext4 /dev/vda1
+mkdir /mnt/temp
+mount -t ext4 /dev/vda1 /mnt/temp
 
 # get IPv4 address in IP-CIDR format
 # do not modify unless you know what you are doing
