@@ -30,7 +30,7 @@ ADDRESS=$(ip addr show $MAIN_INTERFACE | grep global | cut -d' ' -f 6 | head -n 
 GATEWAY=$(ip route list | grep default | cut -d' ' -f 3)
 
 # URL to RouterOS CHR
-ROUTEROS_URL=https://download.mikrotik.com/routeros/7.1/chr-7.1.img.zip
+ROUTEROS_URL=https://download.mikrotik.com/routeros/7.1rc3/chr-7.1rc3.img.zip
 
 # Note: you can customize commands to be executed when RouterOS initializes.
 # Search `Auto configure script` below
